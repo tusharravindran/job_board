@@ -7,7 +7,20 @@
     <h2 class="title is-2">Sign Up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <% if resource.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= I18n.t("errors.messages.not_saved",
+                count: resource.errors.count,
+                resource: resource.class.model_name.human.downcase)%>
+        </h2>
+     <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+     </ul>
+      </div>
+   <% end %>
 
     <div class="field">
       <div class="control">
@@ -35,7 +48,7 @@
 
     <div class="field">
       <div class="control">
-        <%= f.button :submit, "Sign up", class:"button is-medium" %>
+        <%= f.button :submit, "Sign up", class:"button is-primary is-medium" %>
       </div>
     </div>
 

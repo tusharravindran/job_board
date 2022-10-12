@@ -5,7 +5,20 @@
 
       <h2 class="title is-2">Edit <%= resource_name.to_s.humanize %></h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= f.error_notification %>
+        <% if resource.errors.any? %>
+            <div id="error_explanation">
+              <h2>
+                <%= I18n.t("errors.messages.not_saved",
+                   count: resource.errors.count,
+                   resource: resource.class.model_name.human.downcase)%>
+              </h2>
+              <ul>
+                <% resource.errors.full_messages.each do |message| %>
+                 <li><%= message %></li>
+                <% end %>
+             </ul>
+             </div>
+        <% end %>
 
           <div class="field">
             <div class="control">
@@ -43,7 +56,7 @@
             </div>
         </div>
 
-        <%= f.button :submit, "Update", class:"button is-warning" %>
+        <%= f.button :submit, "Update", class:"button is-primary" %>
 
       <% end %>
 
