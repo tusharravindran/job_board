@@ -3,7 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   
   resources :jobs
-  root to: 'home#index'
+  root to: 'jobs#index'
   
   devise_for :users, controllers: {registrations: 'registrations'}
   devise_scope :user do

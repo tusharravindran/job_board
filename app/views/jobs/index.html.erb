@@ -11,8 +11,7 @@
       <th>Job type</th>
       <th>Location</th>
       <th>Job author</th>
-      <th>Remoke ok</th>
-      <th>Apply url</th>
+      <th>Remote ok</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,7 +26,7 @@
         <td><%= job.location %></td>
         <td><%= job.job_author %></td>
         <td><%= job.remoke_ok %></td>
-        <td><%= job.apply_url %></td>
+        <td><%= link_to :apply,"#"%></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
