@@ -1,4 +1,4 @@
- :root {
+:root {
   --spacing-none: 0;
   --spacing-extra-small: .25rem;
   --spacing-small: .5rem;
@@ -9,7 +9,7 @@
   --spacing-extra-extra-extra-large: 16rem;
 }
 
-/* Functional Styles: http://tachyons.io/docs/ */
+
 .pa0 { padding: var(--spacing-none); }
 .pa1 { padding: var(--spacing-extra-small); }
 .pa2 { padding: var(--spacing-small); }
@@ -102,11 +102,6 @@
 .ph2 {
   padding-left: var(--spacing-small);
   padding-right: var(--spacing-small);
-}
-
-.control{
-  display: flex;
-  padding-right: 2px;
 }
 
 .ph3 {
@@ -262,10 +257,21 @@
 .fw6 { font-weight: 600; }
 .fw7 { font-weight: 600; }
 
+.text-sans-serif { font-family: sans-serif; }
+.text-serif { font-family: serif; }
+.text-uppercase { text-transform: uppercase; }
+
 /* Border */
 .border-light { border: 1px solid #dddddd; }
 .border { border: 1px solid #dedede; }
-.border-bottom { border-bottom: 1px solid #dddddd; }
+
+.border-bottom {
+  border-bottom: 1px solid #dddddd;
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
 .border-top { border-top: 1px solid #dddddd; }
 .border-right { border-right: 1px solid #dddddd; }
 
@@ -280,5 +286,4 @@
 
 /* Background */
 .bg-white { background-color: white; }
-.bg-light { background-color: #F1F1F1; }
-
+.bg-light { background-color: whitesmoke; }
