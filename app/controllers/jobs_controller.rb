@@ -12,8 +12,10 @@ class JobsController < ApplicationController
   end
 
  
-  def show
-  end
+  
+  # def index
+  #   redirect_to apply_path
+  # end  
 
 
   def new
@@ -24,7 +26,9 @@ class JobsController < ApplicationController
   def edit
   end
  
-
+  def show
+    @apply =  Apply.find(params[:id])
+  end  
 
   def create
     @job = current_user.jobs.build(job_params)

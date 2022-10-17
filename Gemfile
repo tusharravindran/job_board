@@ -65,6 +65,7 @@ gem'trix'
 gem 'binding_of_caller'
 gem 'figaro'
 
+
 group :development, :test do
   gem 'better_errors'
   gem 'guard'

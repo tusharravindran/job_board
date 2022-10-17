@@ -1,6 +1,8 @@
 class AppliesController < ApplicationController
     
-         
+        def index
+         @applies = Apply.all
+        end  
         def new
           @apply =Apply.new
         end 
@@ -14,7 +16,7 @@ class AppliesController < ApplicationController
             @apply =  Apply.find(params[:id])
         end    
         def apply_params
-          params.require(:apply).permit(:name, :phonenumber,:address,:email,:avatar)
+          params.require(:apply).permit(:name, :phonenumber,:address,:email,:resume)
         end
      
       

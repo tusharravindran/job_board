@@ -1,4 +1,4 @@
-<div class="columns pt4 pb7">
+<%# <div class="columns pt4 pb7">
   <div class="column is-7 is-offset-1">
 
     <p class="f7"><i class="fa fa-clock"></i> Posted <%= time_ago_in_words(@job.created_at) %> ago</p>
@@ -44,8 +44,9 @@
           <%= link_to 'Edit', edit_job_path(@job), class: 'button is-small is-link is-outlined' %></li>
         <li class="pv1 inline-block">
           <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+       
       </ul>
     <% end %>
      
   </div>
-</div>
+</div> %>
