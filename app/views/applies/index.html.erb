@@ -6,10 +6,14 @@
   <h3><%= apply.email%></h3>
 </div>  
 
-  <%# <%= image_tag apply.resume if apply.resume.attached? %%> 
+  
+       <%= link_to apply.resume,rails_blob_path(apply.resume,disposition: "attachment") %>
+     
+       
+      
  
   <%= link_to 'Reject', apply, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
-  <%= link_to 'Accept', @apply, class: 'button is-small is-link is-outlined' %></li>
+  <%= link_to 'Accept', apply, class: 'button is-small is-link is-outlined' %></li>
          
 
   

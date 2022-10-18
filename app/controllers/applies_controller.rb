@@ -9,7 +9,7 @@ class AppliesController < ApplicationController
         def create
           Apply.create(apply_params)
           if @apply.nil?
-            redirect_to jobs_path,flash: {success: "JOB IS APPLIED SUCCESSFULLY"} 
+            redirect_to jobs_path,flash: {notice: "JOB IS APPLIED SUCCESSFULLY"} 
          end 
         end  
         def show
