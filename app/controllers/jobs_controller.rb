@@ -27,7 +27,7 @@ class JobsController < ApplicationController
   end
  
   def show
-    @apply =  Apply.find(params[:id])
+    # @apply =  Apply.find(params[:id])
   end  
 
   def create

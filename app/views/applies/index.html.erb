@@ -1,14 +1,16 @@
+
 <h1>applied job</h1><% @applies.each do |apply| %>
   <h3><%= apply.name %></h3>
-  <p><%= apply.address %></p>
+  <%# <p><%= apply.address</p> %>
   <h3><%= apply.phonenumber%></h3>
   <h3><%= apply.email%></h3>
+</div>  
 
-  <%# <%= image_tag apply.resume if apply.resume.attached?%> %>
+  <%# <%= image_tag apply.resume if apply.resume.attached? %%> 
  
+  <%= link_to 'Reject', apply, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+  <%= link_to 'Accept', @apply, class: 'button is-small is-link is-outlined' %></li>
+         
 
-         
-         
-  
   
 <% end %>

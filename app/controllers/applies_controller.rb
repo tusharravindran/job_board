@@ -14,7 +14,26 @@ class AppliesController < ApplicationController
         end  
         def show
             @apply =  Apply.find(params[:id])
+        end 
+        
+        def destroy
+          @apply =  Apply.find(params[:id])
+          @apply.destroy
+        
+          respond_to do |format|
+            format.html { redirect_to applies_path, notice: "The application is rejected" }
+            format.json { head :no_content }
+          end
+        end
+
+        def accept 
+          
+          respond_to do |format|
+            format.html { redirect_to applies_path, notice: "application is accepted" }
+            format.json { head :no_content }
+          end  
         end    
+
         def apply_params
           params.require(:apply).permit(:name, :phonenumber,:address,:email,:resume)
         end
