@@ -16,10 +16,11 @@ class AppliesController < ApplicationController
             @apply =  Apply.find(params[:id])
         end 
         
-        def destroy
-          @apply =  Apply.find(params[:id])
-          @apply.destroy
-        
+        def reject
+          
+          @apply = Apply.find(params[:id])
+          @apply.status = "Rejected"
+          @apply.save
           respond_to do |format|
             format.html { redirect_to applies_path, notice: "The application is rejected" }
             format.json { head :no_content }
@@ -27,15 +28,21 @@ class AppliesController < ApplicationController
         end
 
         def accept 
-          
+        
+          @apply = Apply.find(params[:id])
+          @apply.status = "Accepted"
+          puts "############# \n ############# \n"
+          @apply.save
+          puts "############# \n ############# \n"
           respond_to do |format|
             format.html { redirect_to applies_path, notice: "application is accepted" }
             format.json { head :no_content }
           end  
         end    
 
+        private
         def apply_params
-          params.require(:apply).permit(:name, :phonenumber,:address,:email,:resume)
+          params.require(:apply).permit(:name, :phonenumber,:address,:email,:resume, :status)
         end
      
       
