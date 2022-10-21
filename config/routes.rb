@@ -3,9 +3,9 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   
   resources :jobs 
-  resources :applies  do 
-    get'/', to: 'applies#accept', as: 'accept'
-  end   
+  resources :applies   
+    # get'/', to: 'applies#accept', as: 'accept'
+  # end   
    
     
  
