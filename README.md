@@ -10,7 +10,7 @@
 4. yarn add bootstrap@5.0.0 <br>
 5. yarn add jquery  <br>
 6. yarn add @popperjs/core</b>
-
+7. yarn add @redis/client@13.14.0
 <h2>Migrate-Database</h2>
 
 <b>rails db:{drop,migrate,seed}</b>
