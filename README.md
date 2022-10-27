@@ -1,5 +1,5 @@
 # README
-start db postgresql
+**start db postgresql**
 service postgresql start
 <h2>Clone Repository</h2>
 1. git clone https://github.com/Priyadharshini100301/job_board_new.git
